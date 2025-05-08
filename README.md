@@ -1,4 +1,17 @@
-# cse210-ww-student-template
-This is the starter code for students in the worldwide content version of CSE 210.
+# Victoria Lutz
 
-This repository contains the starter code for many different projects. They are arranged folders by week. There is also an an empty sandbox project that can be used to play around with any concept you would like.
+<a href = " https://github.com/ToriLutz/cse210-hw/tree/main/week01">Week 1</a>
+
+<a href = " https://github.com/ToriLutz/cse210-hw/tree/main/week02">Week 2</a>
+
+<a href = "https://github.com/ToriLutz/cse210-hw/tree/main/week03">Week 3</a>
+
+
+<a href = "https://github.com/ToriLutz/cse210-hw/tree/main/week04">Week 4</a>
+
+<a href = "https://github.com/ToriLutz/cse210-hw/tree/main/week05">Week 5</a>
+
+<a href = "https://github.com/ToriLutz/cse210-hw/tree/main/week06">Week 6</a>
+
+
+<a href = "https://github.com/ToriLutz/cse210-hw/tree/main/week07">Week 7</a>

@@ -10,16 +10,20 @@ class Program
        Console.WriteLine($"The Magic number is {number}"); 
        string answer = "0";
        int magicNumber = int.Parse(answer);
+       int guesses = 0;
 
 
        do{
         Console.WriteLine("Pick a number: ");
-        answer = Console.ReadLine(); 
-        magicNumber = int.Parse(answer); 
+        answer = Console.ReadLine();
+        guesses++; 
+        magicNumber = int.Parse(answer);
         
             if (magicNumber == number)
             {
+                
                 Console.WriteLine("Congratulations you did it!");
+                Console.WriteLine($"The number of guesses is {guesses}");
             }
             else if (magicNumber > number)
             {

@@ -23,6 +23,7 @@ class Program
         int sum = numbers.Sum();
         double avg = numbers.Average();
         int max = numbers.Max();
+        numbers.Sort();
 
         Console.WriteLine("Your list of numbers: " + string.Join(", ", numbers));
         Console.WriteLine($"Your sum is: {sum}");

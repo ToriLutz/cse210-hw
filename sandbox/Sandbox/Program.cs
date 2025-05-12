@@ -5,26 +5,19 @@ class Program
 {
     static void Main(string[] args)
     {
-       Job job1 = new Job();
+       
+    }
+    public static void addRecord (string ID, string name, string age, string filepath)
+    {
+        try{
 
-        job1.name = "Software Engineer";
-        job1.company = "Microsoft";
-        job1.startYear = 2019;
-        job1.endYear = 2022;
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter (filepath = true));
+        }
+        catch(Exception ex)
+        {
+            throw new ApplicationException ("This program did an oopsie", ex);
 
-        job1.Resume();
-
-
+        }
     }
 }
- class Job{
-  public string name;
-  public string company;
-  public int startYear; 
-  public int endYear; 
 
-   public void Resume()
-  {
-    Console.WriteLine($"{name} ({company}), {startYear}-{endYear}");
-  }
-}

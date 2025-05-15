@@ -64,8 +64,9 @@ class Program
         Console.WriteLine("Please enter your journal prompt");
         string entry = Console.ReadLine();
         //this is to create the journal entry
-        string formattedEntry = $"Date: {date}\nPrompt: {prompt}\nEntry: {entry}\n------------------------------";
+        string formattedEntry = $"Date: {date}, Prompt: {prompt}, Entry: {entry}";
         journalEntries.Add(formattedEntry);
+        Journal();
     }
 //saving entries to a filename of the users choice hopefully 
     public static void SaveAllEntries(){
@@ -83,6 +84,8 @@ class Program
                     writer.WriteLine(entry);
                 }
             }
+
+        Journal();
 
     }
 
@@ -128,5 +131,5 @@ class Program
         }
     }
 
-
+    
 }

@@ -134,7 +134,7 @@ namespace ScriptureMemorizer
                 Console.ReadLine();
             }
 
-            Console.WriteLine("All words are now hidden!");
+            Console.Clear();
         }
     }
 }

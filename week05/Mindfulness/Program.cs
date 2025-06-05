@@ -81,14 +81,22 @@ class Program
     }
 
     public class ListingActivity : Activity{
-    public ListingActivity() : base("Listing Activity", "Guide the user to think broadly, by helping them list as many things as they can in a certain area of strength or positivity.", 60)
-        {
-
-        }
-    
         private int _count;
         private List<string> _prompts;
-        public void Run()
+
+    public ListingActivity() : base("Listing Activity", "Guide the user to think broadly, by helping them list as many things as they can in a certain area of strength or positivity.", 60)
+        {
+            List<string> _prompts = new List<string>()
+            {
+                "Gratitude: List 3 Things you are grateful for.",
+                "Achievements: Write about 5 accomplishment or a time you overcame a challenge",
+                "Self-Awareness: Identify 3 triggers that lead to negative thoughts and how you can manage them",
+                "Values: List 5 core values and how they align with your actions.",
+                "Positive Affirmations: Make 3 positive affirmations to tell yourself :)"
+            };
+        }
+    
+              public void Run()
         {
 
         }

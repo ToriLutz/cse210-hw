@@ -1,7 +1,9 @@
 using System;
 using System.Reflection.Metadata.Ecma335;
 
-class Program
+namespace MakingGoals
+{
+    class Program
 {
     static void Main(string[] args)
     {
@@ -46,7 +48,7 @@ class Program
         {
             return $"{_shortName}, {_description} this activity earns you {_points}";
         }
-        public abstract void recordEvent();
+            public abstract void recordEvent();
         public abstract bool IsCompleted(bool _isComplete);
 
         public string GetDetailsString()
@@ -56,4 +58,5 @@ class Program
 
         public abstract string GetStringRepresentation();
     }
+}
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using MakingGoals;
 
 namespace MakingGoals
@@ -33,8 +34,13 @@ namespace MakingGoals
 
         public override string GetStringRepresentation()
         {
-            
+
             return $"Eternal Goal: {GetName()} - {GetDesc()}";
+        }
+
+        public override bool IsCompleted(bool _isComplete)
+        {
+            return false;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace MakingGoals
 
         public string GetDetailsString()
         {
-            return $"{goal()}, Completed: {IsCompleted()}";
+            return $"{goal()}, {IsCompleted}";
         }
 
         public abstract string GetStringRepresentation();

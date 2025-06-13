@@ -86,6 +86,7 @@ namespace MakingGoals
                 {
                     Console.WriteLine(goal.GetStringRepresentation());
                 }
+                Start();
 
             }
             else if (Answer == "3")
@@ -106,6 +107,7 @@ namespace MakingGoals
                         writer.WriteLine(goal.GetStringRepresentation());
                     }
                 }
+                Start();
 
 
             }
@@ -118,6 +120,7 @@ namespace MakingGoals
                     string[] lines = System.IO.File.ReadAllLines(name);
 
                 }
+                Start();
             }
             else if (Answer == "5")
             {
@@ -146,6 +149,7 @@ namespace MakingGoals
                     Console.WriteLine("Invalid selection.");
                     Start();
                 }
+                Start();
 
             }
             else

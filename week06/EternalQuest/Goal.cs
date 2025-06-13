@@ -56,7 +56,7 @@ namespace MakingGoals
 
         public string GetDetailsString()
         {
-            
+            return $"{GetStatusIcon()} {_shortName} - {_description}";
         }
 
         public abstract string GetStringRepresentation();

@@ -34,16 +34,16 @@ namespace MakingGoals
                 Goal newGoal = null;
                 if (GoalAnswer == "1")
                 {
-                    newGoal = new SimpleGoal();
+                    newGoal = new BasicSimpleGoal();
 
                 }
                 else if (GoalAnswer == "2")
                 {
-                    newGoal = new EternalGoals();
+                    newGoal = new BasicEternalGoal();
                 }
                 else if (GoalAnswer == "3")
                 {
-                    newGoal = new ChecklistGoal();
+                    newGoal = new BasicChecklistGoal();
 
                 }
                 else

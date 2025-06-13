@@ -38,4 +38,14 @@ namespace MakingGoals
             return $"Eternal Goal: {GetName()} - {GetDesc()}";
         }
     }
+    public class BasicEternalGoal : EternalGoals
+    {
+        
+        public override string GetStringRepresentation()
+        {
+            
+            string status = _isCompleted ? "[X]" : "[ ]";
+            return $"{status} {_shortName} - {_description}";
+        }
+    }
 }

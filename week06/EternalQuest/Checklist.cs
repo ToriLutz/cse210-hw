@@ -33,4 +33,14 @@ namespace MakingGoals
             }
         }
     }
+    public class BasicChecklistGoal : ChecklistGoal
+    {
+        
+        public override string GetStringRepresentation()
+        {
+            
+            string status = _isCompleted ? "[X]" : "[ ]";
+            return $"{status} {_shortName} - {_description}";
+        }
+    }
 }

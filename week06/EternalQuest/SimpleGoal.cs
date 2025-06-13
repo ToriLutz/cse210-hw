@@ -15,26 +15,36 @@ namespace MakingGoals
             }
             Console.WriteLine("Select a goal to mark as complete:");
             for (int i = 0; i < goals.Count; i++)
-                {
-                    Console.WriteLine($"{i + 1}. {goals[i].GetStringRepresentation()}");
-                }
+            {
+                Console.WriteLine($"{i + 1}. {goals[i].GetStringRepresentation()}");
+            }
 
             Console.Write("Enter the number of the goal: ");
             string input = Console.ReadLine();
 
             if (int.TryParse(input, out int index) && index >= 1 && index <= goals.Count)
-                {
-                     goals[index - 1].MarkComplete(); 
-                     Console.WriteLine("Goal marked as completed!");
-                }
+            {
+                goals[index - 1].MarkComplete();
+                Console.WriteLine("Goal marked as completed!");
+            }
             else
-                {
-            Console.WriteLine("Invalid selection.");
-                }
+            {
+                Console.WriteLine("Invalid selection.");
+            }
 
 
 
 
+        }
+    }
+     public class BasicSimpleGoal : SimpleGoal
+    {
+        
+        public override string GetStringRepresentation()
+        {
+            
+            string status = _isCompleted ? "[X]" : "[ ]";
+            return $"{status} {_shortName} - {_description}";
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Drawing;
 using System.Formats.Asn1;
 using MakingGoals;
 
@@ -14,6 +15,7 @@ namespace MakingGoals
         }
         public void Start()
         {
+            Console.WriteLine(_points);
             Console.WriteLine("Welcome to Eternal Quest");
             Console.WriteLine("Would you like to: ");
             Console.WriteLine("1. Create Goal");

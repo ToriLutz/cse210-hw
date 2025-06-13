@@ -96,7 +96,30 @@ namespace MakingGoals
             }
             else if (Answer == "5")
             {
+                if (goals.Count == 0)
+                {
+                    Console.WriteLine("No goals to record event for.");
+                    return;
+                }
 
+                Console.WriteLine("Select a goal to mark as complete:");
+                for (int i = 0; i < goals.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {goals[i].GetDetailsString()}");
+                }
+
+                Console.Write("Enter the number of the goal: ");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out int index) && index >= 1 && index <= goals.Count)
+                {
+                    goals[index - 1].RecordEvent(); // Mark as complete
+                    Console.WriteLine("Goal marked as complete!");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid selection.");
+                }
             }
             else
             {

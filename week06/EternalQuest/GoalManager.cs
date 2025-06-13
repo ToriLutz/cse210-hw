@@ -58,16 +58,41 @@ namespace MakingGoals
             }
             else if (Answer == "2")
             {
-
+                foreach (var goal in goals)
+                {
+                    Console.WriteLine(goal.GetStringRepresentation());
+                }
 
             }
             else if (Answer == "3")
             {
+                Console.WriteLine("Enter filename to save all Goals to (e.g., mygoals.csv):");
+                string filename = Console.ReadLine();
+
+                if (!filename.EndsWith(".csv"))
+                {
+                    filename += ".csv";
+                }
+
+                using (StreamWriter writer = new StreamWriter(filename))
+                {
+                    foreach (var entry in goals)
+                    {
+                        writer.WriteLine(entry.GetStringRepresentation());
+                    }
+                }
+
 
             }
             else if (Answer == "4")
             {
+                Console.WriteLine("Please enter a filename to load: ");
+                string name = Console.ReadLine();
+                if (System.IO.File.Exists(name))
+                {
+                    string[] lines = System.IO.File.ReadAllLines(name);
 
+                }
             }
             else if (Answer == "5")
             {

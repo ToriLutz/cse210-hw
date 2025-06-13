@@ -3,44 +3,21 @@ using MakingGoals;
 
 namespace MakingGoals
 {
-    public abstract class ChecklistGoal : Goal
+    public class ChecklistGoal : Goal
     {
-        protected List<Goal> goals = new List<Goal>();
-        public override void RecordEvent()
+        public override int RecordEvent()
         {
-            if (goals.Count == 0)
+            _eventsCompleted += 1;
+            if (_eventsCompleted == _goalTarget)
             {
-                Console.WriteLine("No goals to record an event for.");
-                return;
+                return _points + _goalBonus;
             }
-            Console.WriteLine("Select a goal to mark as complete:");
-            for (int i = 0; i < goals.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {goals[i].GetStringRepresentation()}");
-            }
-
-            Console.Write("Enter the number of the goal: ");
-            string input = Console.ReadLine();
-
-            if (int.TryParse(input, out int index) && index >= 1 && index <= goals.Count)
-            {
-                goals[index - 1].MarkComplete();
-                Console.WriteLine("Goal marked as completed!");
-            }
-            else
-            {
-                Console.WriteLine("Invalid selection.");
-            }
+            return _points;
         }
-    }
-    public class BasicChecklistGoal : ChecklistGoal
-    {
-        
+
         public override string GetStringRepresentation()
         {
-            
-            string status = _isCompleted ? "[X]" : "[ ]";
-            return $"{status} {_shortName} - {_description}";
+            return $"{_shortName}, {_description} this activity earns you {_points} - you have completed {_eventsCompleted}/{_goalTarget} events";
         }
     }
 }

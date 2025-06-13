@@ -7,8 +7,11 @@ namespace MakingGoals
     {
         protected string _shortName;
         protected string _description;
+        protected bool _isCompleted = false;
+        protected int _goalBonus;
+        protected int _goalTarget;
+        protected int _eventsCompleted;
         protected int _points;
-        private bool _isComplete;
 
         public void SetName(string ShortName)
         {
@@ -37,12 +40,36 @@ namespace MakingGoals
             return _points;
         }
 
+        public void SetGoalBonus(int bonus)
+        {
+            _goalBonus = bonus;
+        }
+        public int GetGoalBonus()
+        {
+            return _goalBonus;
+        }
+
+        public void SetGoalTarget(int target) {
+            _goalTarget = target;
+        }
+        public int GetGoalTarget()
+        {
+            return _goalTarget;
+        }
+        public void SetEventsCompleted(int completed)
+        {
+            _eventsCompleted = completed;
+        }
+        public int GetEventsCompleted()
+        {
+            return _eventsCompleted;
+        }
+
         public string goal()
         {
             return $"{_shortName}, {_description} this activity earns you {_points}";
         }
-        public abstract void RecordEvent();
-        protected bool _isCompleted = false;
+        public abstract int RecordEvent();
         public string GetStatusIcon()
         {
             return _isCompleted ? "[X]" : "[ ]";
@@ -52,14 +79,15 @@ namespace MakingGoals
             _isCompleted = true;
         }
 
-
-
         public string GetDetailsString()
         {
             return $"{GetStatusIcon()} {_shortName} - {_description}";
         }
 
-        public abstract string GetStringRepresentation();
+        public virtual string GetStringRepresentation()
+        {
+            return $"{_shortName}, {_description} this activity earns you {_points}";
+        }
     }
 
 }

@@ -4,48 +4,11 @@ using MakingGoals;
 
 namespace MakingGoals
 {
-    public abstract class EternalGoals : Goal
+    public class EternalGoals : Goal
     {
-        public override void RecordEvent()
+        public override int RecordEvent()
         {
-            Console.WriteLine("Please insert what goal you would like to achieve: ");
-            string shortName = Console.ReadLine();
-
-            Console.WriteLine("Please give me a description of what you will be doing: ");
-            string description = Console.ReadLine();
-
-            Console.WriteLine("How many points is it worth? ");
-            string pointsInput = Console.ReadLine();
-            int points;
-            if (int.TryParse(pointsInput, out points))
-            {
-                SetName(shortName);
-                SetDesc(description);
-                SetPoints(points);
-            }
-            else
-            {
-                Console.WriteLine("Invalid points input. Setting points to 0.");
-                SetName(shortName);
-                SetDesc(description);
-                SetPoints(0);
-            }
-        }
-
-        public override string GetStringRepresentation()
-        {
-
-            return $"Eternal Goal: {GetName()} - {GetDesc()}";
-        }
-    }
-    public class BasicEternalGoal : EternalGoals
-    {
-        
-        public override string GetStringRepresentation()
-        {
-            
-            string status = _isCompleted ? "[X]" : "[ ]";
-            return $"{status} {_shortName} - {_description}";
+            return _points;
         }
     }
 }

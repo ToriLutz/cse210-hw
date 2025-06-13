@@ -42,11 +42,21 @@ namespace MakingGoals
             return $"{_shortName}, {_description} this activity earns you {_points}";
         }
         public abstract void RecordEvent();
-        public abstract bool IsCompleted(bool _isComplete);
+        protected bool _isCompleted = false;
+        public string GetStatusIcon()
+        {
+            return _isCompleted ? "[X]" : "[ ]";
+        }
+        public virtual void MarkComplete()
+        {
+            _isCompleted = true;
+        }
+
+
 
         public string GetDetailsString()
         {
-            return $"{goal()}, {IsCompleted}";
+            
         }
 
         public abstract string GetStringRepresentation();

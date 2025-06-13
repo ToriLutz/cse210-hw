@@ -6,7 +6,7 @@ namespace MakingGoals
 {
     public abstract class GoalManager : Goal
     {
-        private List<Goal> goals = new List<Goal>();
+        protected List<Goal> goals = new List<Goal>();
         public void Start()
         {
             Console.WriteLine("Welcome to Eternal Quest");
@@ -76,9 +76,9 @@ namespace MakingGoals
 
                 using (StreamWriter writer = new StreamWriter(filename))
                 {
-                    foreach (var entry in goals)
+                    foreach (var goal in goals)
                     {
-                        writer.WriteLine(entry.GetStringRepresentation());
+                        writer.WriteLine(goal.GetStringRepresentation());
                     }
                 }
 

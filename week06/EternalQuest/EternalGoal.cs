@@ -37,10 +37,5 @@ namespace MakingGoals
 
             return $"Eternal Goal: {GetName()} - {GetDesc()}";
         }
-
-        public override bool IsCompleted(bool _isComplete)
-        {
-            return false;
-        }
     }
 }
